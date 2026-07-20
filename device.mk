@@ -50,6 +50,24 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24877/build.ROW.prop:$(TARGET_COPY_OUT_ODM)/etc/24877/build.ROW.prop \
     $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24877/build.default.prop:$(TARGET_COPY_OUT_ODM)/etc/24877/build.default.prop
 
+# Properties
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.build.version.ota=CPH2767_11.A.47_0470_202606060131 \
+    ro.oplus.product.series=flagship_series
+
+# VINTF
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    device/oneplus/infiniti/vintf/device_framework_matrix.xml
+
+# Regional properties
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24831/build.default.prop:$(TARGET_COPY_OUT_ODM)/etc/24831/build.default.prop \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24863/build.EU.prop:$(TARGET_COPY_OUT_ODM)/etc/24863/build.EU.prop \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24863/build.IN.prop:$(TARGET_COPY_OUT_ODM)/etc/24863/build.IN.prop \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24863/build.NA.prop:$(TARGET_COPY_OUT_ODM)/etc/24863/build.NA.prop \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24863/build.ROW.prop:$(TARGET_COPY_OUT_ODM)/etc/24863/build.ROW.prop \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24863/build.default.prop:$(TARGET_COPY_OUT_ODM)/etc/24863/build.default.prop
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
