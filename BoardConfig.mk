@@ -4,13 +4,20 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-USE_PREBUILT_KERNEL := false
+USE_PREBUILT_KERNEL := true
 
 # Partitions
 BOARD_SUPER_PARTITION_SIZE := 16231956480
 
 # Include the common OEM chipset BoardConfig.
 include device/oneplus/sm8850-common/BoardConfigCommon.mk
+
+# Kernel
+ifeq ($(USE_PREBUILT_KERNEL), true)
+include device/oneplus/macan-kernel/BoardConfig.mk
+else
+TARGET_KERNEL_ADDITIONAL_FLAGS += CONFIG_MACAN_DTB=y
+endif
 
 DEVICE_PATH := device/oneplus/macan
 
